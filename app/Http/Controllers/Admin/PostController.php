@@ -53,11 +53,10 @@ class PostController extends Controller
             'body' => 'required',
             'image' => 'required',
             ]);
-        if ($request->hasFile('image')) {
-            $imageName = $request->image->store('public');
-        }else{
-            return 'No';
-        }
+         if ($request->hasFile('image')) {
+        $imageName = time() . '.' . $request->image->extension();
+        $request->image->move(public_path('images'), $imageName);
+    }
         $post = new post;
         $post->image = $imageName;
         $post->title = $request->title;

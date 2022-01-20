@@ -16,7 +16,7 @@ class post extends Model
 
     public function categories()
     {
-        return $this->belongsToMany('App\Models\category','category_posts','category_id' , 'post_id')->withTimestamps();;
+        return $this->belongsToMany('App\Models\category','category_posts','category_id' , 'post_id')->withTimestamps();
     }
 
     public function getRouteKeyName()
