@@ -84,6 +84,7 @@ Route::group(['prefix'=>'admin'], function () {
 // User Routes
 Route::group(['prefix' => ''],function(){
     Route::get('/','App\Http\Controllers\HomeController@index');
+    Route::get('/showpost','App\Http\Controllers\user\HomeController@showpost');
     Route::get('post/{post}','App\Http\Controllers\user\PostController@post')->name('post');
 
     Route::get('post/tag/{tag}','App\Http\Controllers\user\HomeController@tag')->name('tag');

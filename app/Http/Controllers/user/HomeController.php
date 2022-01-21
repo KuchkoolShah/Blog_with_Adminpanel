@@ -26,4 +26,11 @@ class HomeController extends Controller
         $posts = $category->posts();
         return view('user.blog',compact('posts'));
     }
+    
+     public function showpost()
+    {
+        $post = post::where('status',1)->orderBy('created_at','DESC')->paginate(5);
+        //dd($posts);
+        return view('home',compact('post'));
+    }
 }
