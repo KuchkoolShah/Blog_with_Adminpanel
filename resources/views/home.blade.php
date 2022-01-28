@@ -30,18 +30,18 @@
             
                 @foreach ($post as $post)
                          <div class="card mb-3">
-                              <img src= "{{asset('images/'.$post->image) }}" height="200px;" width="100%">
+                              <img src= "{{asset('images/'.$post->image) }}" class="img-fluid" width="100%">
                               <div class="card-body">
                                 <h3 class="card-title"> {{ $post->title }}</h3>
                                 <p class="card-text"> {!! htmlspecialchars_decode($post->body) !!}</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                <p class="card-text"><small class="text-muted">{{ $post->created_at->diffForHumans() }}</small></p>
                               </div>
                             </div> 
 
                 @endforeach
                 
                      <h3>Tag Clouds</h3>
-                           <p>  Welcome to Bitfumes - Ed Sheeran and Spiderman (homecoming) </p>
+                           <p>  Welcome to kuchkoolshah - Ed Sheeran and Spiderman (homecoming) </p>
             </div>
              <div class="col-lg-2 col-md-2">
                  <div class="card">
