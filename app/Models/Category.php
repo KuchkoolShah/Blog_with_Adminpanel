@@ -11,7 +11,7 @@ class Category extends Model
 
      public function posts()
     {
-        return $this->belongsToMany('App\Models\post','category_posts' , 'category_id' , 'post_id')->orderBy('created_at','DESC')->paginate(5);
+        return $this->belongsToMany('App\Models\post','category_posts' , 'category_id' , 'post_id' , 'id' )->orderBy('created_at','DESC')->paginate(5);
     }
 
     public function getRouteKeyName()

@@ -46,6 +46,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+       //return $request->all();
         $this->validate($request,[
             'title'=>'required',
             'subtitle' => 'required',
